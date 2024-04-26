@@ -13,9 +13,9 @@ public class Job {
     @Column(name = "job_title", nullable = false)
     private String jobtitle;
 
-    @Column(name = "min_salary", nullable = false)
+    @Column(name = "min_salary")
     private String minsalary;
-    @Column(name = "max_salary", nullable = false)
+    @Column(name = "max_salary")
     private String maxsalary;
 
     public int getJobid() {

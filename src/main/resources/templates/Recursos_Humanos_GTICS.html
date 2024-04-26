@@ -30,7 +30,7 @@
                 <a class="btn btn-outline-secondary" th:href="@{/shipper}">Limpiar</a>
             </div>
         </form>
-        <a class="btn btn-primary mb-4" th:href="@{'/shipper/new'}">Nuevo Transportista</a>
+        <a class="btn btn-primary mb-4" th:href="@{'/shipper/new'}">Nuevo Empleado</a>
         <a class="btn btn-primary mb-4" th:href="@{'/shipper/buscarTelefonoCon5'}">Buscar telefono con número 5 (b. parcial)</a>
         <table class="table table-sm">
             <tr>
@@ -46,12 +46,12 @@
             </tr>
             <tr th:each="shipper, info : ${shipperList}">
                 <td th:text="${info.index + 1}"></td>
-                <td th:text="${shipper.companyname}"></td>
+                <td th:text="${usuario.companyname}"></td>
+                <td th:text="${shipper.phone}"></td>
+                <td th:text="${shipper.phone}"></td>
+                <td th:text="${shipper.phone}"></td>
                 <td th:text="${shipper.phone}"></td>
                 <td><a class="btn btn-primary" th:href="@{'/shipper/edit?id=' + ${shipper.shipperId}}">Editar</a>
-                </td>
-                <td><a class="btn btn-primary" th:href="@{'/shipper/editPhone?id=' + ${shipper.shipperId}}">Editar solo phone</a>
-                </td>
                 <td><a class="btn btn-danger" th:href="@{'/shipper/delete?id=' + ${shipper.shipperId}}">Borrar</a>
                 </td>
             </tr>
