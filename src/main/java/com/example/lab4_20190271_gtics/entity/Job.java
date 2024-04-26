@@ -18,4 +18,35 @@ public class Job {
     @Column(name = "max_salary", nullable = false)
     private String maxsalary;
 
+    public int getJobid() {
+        return jobid;
+    }
+
+    public void setJobid(int jobid) {
+        this.jobid = jobid;
+    }
+
+    public String getJobtitle() {
+        return jobtitle;
+    }
+
+    public void setJobtitle(String jobtitle) {
+        this.jobtitle = jobtitle;
+    }
+
+    public String getMinsalary() {
+        return minsalary;
+    }
+
+    public void setMinsalary(String minsalary) {
+        this.minsalary = minsalary;
+    }
+
+    public String getMaxsalary() {
+        return maxsalary;
+    }
+
+    public void setMaxsalary(String maxsalary) {
+        this.maxsalary = maxsalary;
+    }
 }

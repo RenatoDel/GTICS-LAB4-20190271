@@ -20,6 +20,44 @@
         </div>
     </div>
 </nav>
+<main>
+    <div class="container px-4 py-5">
+        <h1 class="pb-2 border-bottom">Empleados Totales</h1>
+        <form method="post" th:action="@{/shipper/buscarPorNombre}">
+            <div class="input-group mb-3">
+                <input name="searchField" class="form-control" type="text" placeholder="Buscar por nombre" th:value="${textoBuscado}" >
+                <button class="btn btn-primary" type="submit">Buscar</button>
+                <a class="btn btn-outline-secondary" th:href="@{/shipper}">Limpiar</a>
+            </div>
+        </form>
+        <a class="btn btn-primary mb-4" th:href="@{'/shipper/new'}">Nuevo Transportista</a>
+        <a class="btn btn-primary mb-4" th:href="@{'/shipper/buscarTelefonoCon5'}">Buscar telefono con número 5 (b. parcial)</a>
+        <table class="table table-sm">
+            <tr>
+                <th>#</th>
+                <th>Nombre </th>
+                <th>Apellido</th>
+                <th>Puesto</th>
+                <th>Departamento</th>
+                <th>Cuidad</th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr th:each="shipper, info : ${shipperList}">
+                <td th:text="${info.index + 1}"></td>
+                <td th:text="${shipper.companyname}"></td>
+                <td th:text="${shipper.phone}"></td>
+                <td><a class="btn btn-primary" th:href="@{'/shipper/edit?id=' + ${shipper.shipperId}}">Editar</a>
+                </td>
+                <td><a class="btn btn-primary" th:href="@{'/shipper/editPhone?id=' + ${shipper.shipperId}}">Editar solo phone</a>
+                </td>
+                <td><a class="btn btn-danger" th:href="@{'/shipper/delete?id=' + ${shipper.shipperId}}">Borrar</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</main>
 
 
 
